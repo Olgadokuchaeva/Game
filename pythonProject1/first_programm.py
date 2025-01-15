@@ -2,19 +2,15 @@ import os
 import sys
 import pygame
 
-
-import os
-import sys
-import pygame
-
+#C:\Users\Оля\PycharmProjects\git_project1\pythonProject1
 
 class App:
     def __init__(self):
         pygame.init()
-        self.width, self.height = 600, 600
+        self.width, self.height = 600, 400
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode((self.width, self.height))
-        pygame.display.set_caption('Mario')
+        pygame.display.set_caption('GeometryDash')
         self.fps = 50
 
     def terminate(self):
@@ -23,7 +19,6 @@ class App:
 
     def load_image(self, name, colorkey=None):
         fullname = os.path.join('data', name)
-        # если файл не существует, то выходим
         if not os.path.isfile(fullname):
             print(f"Файл с изображением '{fullname}' не найден")
             sys.exit()
@@ -43,9 +38,7 @@ class App:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.terminate()
-            # update
 
-            # render
             self.screen.fill(pygame.Color('blue'))
             pygame.display.flip()
             self.clock.tick(self.fps)
@@ -56,7 +49,7 @@ class App:
                       "Если в правилах несколько строк,",
                       "приходится выводить их построчно"]
 
-        fon = pygame.transform.scale(self.load_image('fon.jpg'), (self.width, self.height))
+        fon = pygame.transform.scale(self.load_image('screen.jpg'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
         font = pygame.font.Font(None, 30)
         text_coord = 50
