@@ -38,17 +38,13 @@ class App:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.terminate()
-
             self.screen.fill(pygame.Color('blue'))
             pygame.display.flip()
             self.clock.tick(self.fps)
 
     def start_screen(self):
         intro_text = ["ЗАСТАВКА", "",
-                      "Правила игры",
-                      "Если в правилах несколько строк,",
-                      "приходится выводить их построчно"]
-
+                      "Правила игры"]
         fon = pygame.transform.scale(self.load_image('screen.jpg'), (self.width, self.height))
         self.screen.blit(fon, (0, 0))
         font = pygame.font.Font(None, 30)
@@ -61,7 +57,6 @@ class App:
             intro_rect.x = 10
             text_coord += intro_rect.height
             self.screen.blit(string_rendered, intro_rect)
-
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -75,4 +70,5 @@ class App:
 
 if __name__ == '__main__':
     app = App()
+    app.start_screen()
     app.run_game()
