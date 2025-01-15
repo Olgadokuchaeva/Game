@@ -7,7 +7,7 @@ import pygame
 class App:
     def __init__(self):
         pygame.init()
-        self.width, self.height = 600, 400
+        self.width, self.height = 700, 400
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption('GeometryDash')
