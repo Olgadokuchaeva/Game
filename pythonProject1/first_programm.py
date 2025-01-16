@@ -38,7 +38,21 @@ class App:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.terminate()
+                if event.type == pygame.KEYDOWN: # переход на конечный фон спомощью нажатии клавиши.
+                    #Должен переходить только при заканчиваний жизни. Будут правки
+                    self.end_screen()
+                    run = False
             self.screen.fill(pygame.Color('blue'))
+            pygame.display.flip()
+            self.clock.tick(self.fps)
+
+    def end_screen(self):
+        fon = pygame.transform.scale(self.load_image('end.jpg'), (self.width, self.height))
+        self.screen.blit(fon, (0, 0))
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.terminate()
             pygame.display.flip()
             self.clock.tick(self.fps)
 
