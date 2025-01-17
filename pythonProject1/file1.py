@@ -75,7 +75,7 @@ class App:
                 if event.type == pygame.QUIT:
                     self.terminate()
                 elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
-                    return  # начинаем игру
+                    return
             pygame.display.flip()
             self.clock.tick(self.fps)
 
