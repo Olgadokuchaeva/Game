@@ -2,7 +2,6 @@ import os
 import sys
 import pygame
 
-#C:\Users\Оля\PycharmProjects\git_project1\pythonProject1
 
 class App:
     def __init__(self):
@@ -75,8 +74,7 @@ class App:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.terminate()
-                elif event.type == pygame.KEYDOWN or \
-                        event.type == pygame.MOUSEBUTTONDOWN:
+                elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                     return  # начинаем игру
             pygame.display.flip()
             self.clock.tick(self.fps)
